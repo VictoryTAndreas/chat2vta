@@ -1,0 +1,525 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@import './base.css';
+
+@import 'tw-animate-css';
+
+/* Streamdown styles */
+@source "../../../node_modules/streamdown/dist/*.js";
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  margin: 0;
+}
+
+code {
+  font-weight: 600;
+  padding: 3px 5px;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
+  font-size: 85%;
+}
+
+.dark code {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+.logo {
+  margin-bottom: 20px;
+  -webkit-user-drag: none;
+  height: 128px;
+  width: 128px;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 1.2em #6988e6aa);
+}
+
+.creator {
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--ev-c-text-2);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 28px;
+  color: var(--ev-c-text-1);
+  font-weight: 700;
+  line-height: 32px;
+  text-align: center;
+  margin: 0 10px;
+  padding: 16px 0;
+}
+
+.tip {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ev-c-text-2);
+  font-weight: 600;
+}
+
+.react {
+  background: -webkit-linear-gradient(315deg, #087ea4 55%, #7c93ee);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.ts {
+  background: -webkit-linear-gradient(315deg, #3178c6 45%, #f0dc4e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  padding-top: 32px;
+  margin: -6px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.action {
+  flex-shrink: 0;
+  padding: 6px;
+}
+
+.action a {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid transparent;
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 20px;
+  padding: 0 20px;
+  line-height: 38px;
+  font-size: 14px;
+  border-color: var(--ev-button-alt-border);
+  color: var(--ev-button-alt-text);
+  background-color: var(--ev-button-alt-bg);
+}
+
+.action a:hover {
+  border-color: var(--ev-button-alt-hover-border);
+  color: var(--ev-button-alt-hover-text);
+  background-color: var(--ev-button-alt-hover-bg);
+}
+
+.versions {
+  position: absolute;
+  bottom: 30px;
+  margin: 0 auto;
+  padding: 15px 0;
+  font-family: 'Menlo', 'Lucida Console', monospace;
+  display: inline-flex;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 22px;
+  background-color: #202127;
+  backdrop-filter: blur(24px);
+}
+
+.versions li {
+  display: block;
+  float: left;
+  border-right: 1px solid var(--ev-c-gray-1);
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 14px;
+  opacity: 0.8;
+  &:last-child {
+    border: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 620px) {
+  .versions {
+    display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .tip,
+  .actions {
+    display: none;
+  }
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+  --color-chart-9: var(--chart-9);
+  --color-chart-10: var(--chart-10);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-chat-input-background: var(--chat-input-background);
+  --color-codeblock-background: var(--codeblock-background);
+  --color-codeblock-header-background: var(--codeblock-header-background);
+  --color-input-surface: var(--input-surface-background);
+  --color-surface-elevated: var(--surface-elevated);
+}
+
+:root {
+  --radius: 0.625rem;
+  --border-width: 1px;
+  --background: oklch(0.98 0.005 230); /* Cleaner, slightly off-white */
+  --foreground: oklch(0.12 0.01 230); /* Darker foreground for better contrast */
+  --card: oklch(1 0 0); /* Pure white for cards to pop a bit more */
+  --card-foreground: oklch(0.12 0.01 230); /* Consistent with main foreground */
+  --popover: oklch(1 0 0); /* Pure white for popovers */
+  --popover-foreground: oklch(0.12 0.01 230); /* Consistent with main foreground */
+  --primary: oklch(0.58 0.16 255); /* Slightly adjusted modern blue */
+  --primary-foreground: oklch(0.99 0 0); /* White foreground for primary */
+  --secondary: oklch(0.95 0.01 230); /* Lighter secondary */
+  --secondary-foreground: oklch(0.25 0.01 230); /* Darker secondary foreground */
+  --muted: oklch(0.95 0.01 230); /* Consistent with secondary */
+  --muted-foreground: oklch(0.5 0.01 230); /* Softer muted foreground */
+  --accent: oklch(0.6 0.18 280); /* Modern, slightly desaturated purple */
+  --accent-foreground: oklch(0.99 0 0); /* White foreground for accent */
+  --destructive: oklch(0.55 0.22 25); /* Clear destructive red */
+  --border: oklch(0.9 0.005 230); /* Softer, lighter border */
+  --input: oklch(0.9 0.005 230); /* Consistent with border */
+  --ring: oklch(0.58 0.16 255 / 0.5); /* Ring matching new primary */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --chart-6: oklch(0.65 0.15 280); /* Example: A medium purple */
+  --chart-7: oklch(0.75 0.16 150); /* Example: A seafoam green */
+  --chart-8: oklch(0.7 0.2 55); /* Example: A golden yellow */
+  --chart-9: oklch(0.55 0.18 330); /* Example: A magenta/pink */
+  --chart-10: oklch(0.8 0.1 190); /* Example: A sky blue */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.605 0.174 262.3); /* Accent Blue (78, 134, 249) - Same as dark theme */
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(
+    0.617 0.218 291.1
+  ); /* Accent Purple (157, 113, 249) - Same as dark theme */
+  --sidebar-accent-foreground: oklch(0.145 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.605 0.174 262.3 / 0.5); /* Blue ring to match primary */
+  --chat-input-background: oklch(0.97 0 0);
+  --codeblock-background: oklch(0.92 0.005 230); /* Darker than background for light mode */
+  --codeblock-header-background: oklch(0.88 0.01 230); /* Even darker for header */
+  --shadow-color-rgb: 0 0 0; /* Default black shadow for light mode */
+  --shadow-color-opacity: 0.1;
+  --input-surface-background: oklch(1 0 0); /* White for light mode */
+  --surface-elevated: rgba(0, 0, 0, 0.03); /* Elevated surface background for light mode */
+}
+
+.dark {
+  --border-width: 1px;
+  /* VS Code-inspired Dark Theme - neutral grays with gold accents */
+  --background: oklch(0.24 0.005 250); /* Dark neutral gray */
+  --foreground: oklch(0.95 0 0); /* Pure white text */
+  --card: oklch(0.30 0.005 250); /* Lighter gray for cards/chat area */
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.31 0.005 250); /* Matches card */
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.9 0.01 250); /* Light/whitish button */
+  --primary-foreground: oklch(0.15 0.01 250); /* Dark text on light button */
+  --secondary: oklch(0.28 0.005 250); /* Muted gray */
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.25 0.005 250); /* Muted background */
+  --muted-foreground: oklch(0.65 0.005 250); /* Gray text */
+  --accent: oklch(0.9 0.01 250); /* Light/whitish for highlights */
+  --accent-foreground: oklch(0.15 0.01 250);
+  --destructive: oklch(0.55 0.20 25); /* Red */
+  --border: oklch(0.38 0.005 250); /* Gray border */
+  --input: oklch(0.35 0.005 250); /* Input border */
+  --ring: oklch(0.9 0.01 250 / 0.5); /* Light ring */
+  --text-accent-orange: oklch(0.80 0.15 85); /* Gold text accent */
+  /* Chart palette */
+  --chart-1: oklch(0.80 0.15 85); /* Gold */
+  --chart-2: oklch(0.70 0.15 140); /* Green */
+  --chart-3: oklch(0.65 0.15 250); /* Blue */
+  --chart-4: oklch(0.65 0.15 30); /* Orange */
+  --chart-5: oklch(0.65 0.15 320); /* Pink */
+  --chart-6: oklch(0.72 0.12 100 / 0.9);
+  --chart-7: oklch(0.68 0.12 180 / 0.9);
+  --chart-8: oklch(0.75 0.10 60 / 0.9);
+  --chart-9: oklch(0.60 0.15 280 / 0.9);
+  --chart-10: oklch(0.70 0.10 200 / 0.9);
+  /* Specific UI element backgrounds */
+  --sidebar: oklch(0.16 0.005 250); /* Darker sidebar */
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.9 0.01 250); /* Light/whitish */
+  --sidebar-primary-foreground: oklch(0.15 0.01 250);
+  --sidebar-accent: oklch(0.9 0.01 250); /* Light/whitish */
+  --sidebar-accent-foreground: oklch(0.15 0.01 250);
+  --sidebar-border: oklch(0.25 0.005 250);
+  --sidebar-ring: oklch(0.9 0.01 250 / 0.5);
+  --chat-input-background: oklch(0.33 0.005 250); /* Input background */
+  --chart-background: oklch(0.29 0.005 250); /* Chart background */
+  --user-message-background: oklch(0.35 0.005 250); /* User message */
+  --codeblock-background: oklch(0.14 0.005 250); /* Darker for code */
+  --codeblock-header-background: oklch(0.12 0.005 250); /* Even darker for header */
+  /* Shadow variables for dark mode */
+  --shadow-color-rgb: 0 0 0; /* Black shadow */
+  --shadow-color-opacity: 0.3;
+  --input-surface-background: oklch(0.25 0.005 250); /* Input surface */
+  --surface-elevated: rgba(255, 255, 255, 0.05); /* Elevated surface background */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* Set global border width */
+  .border {
+    border-width: var(--border-width);
+  }
+
+  /* Fix for button outlines in dark mode - targeted specifically to button elements */
+  .dark button.border-input,
+  .dark button.dark\:border-input {
+    border-color: var(--border) !important;
+  }
+
+  /* Target only outline variant buttons in shadcn */
+  .dark button[class*='variant-outline'],
+  .dark [role='button'][class*='variant-outline'] {
+    border-color: var(--border) !important;
+  }
+}
+
+/* Elevated Surface - for cards, panels, and containers that need subtle distinction */
+.surface-elevated {
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border);
+}
+
+/* Custom Caret Styles */
+.custom-caret-blink {
+  /* Base styling like width, background-color will be applied inline via style prop */
+  /* animation-duration: 1.2s; /* Adjust duration as needed */
+  /* animation-timing-function: ease-in-out; */
+  /* animation-iteration-count: infinite; */
+  animation: smooth-caret-fade-blink 1.2s infinite ease-in-out;
+}
+
+@keyframes smooth-caret-fade-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  } /* Fades to 10% opacity for a smoother blink */
+}
+/* End Custom Caret Styles */
+
+/* Custom Scrollbar Styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--muted-foreground);
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Enhanced Scrollbar Styles */
+.enhanced-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted-foreground) transparent;
+}
+
+.enhanced-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.enhanced-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.enhanced-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--muted-foreground);
+  border-radius: 10px;
+  border: none;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.enhanced-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--foreground);
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.enhanced-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Apply sleek scrollbar to markdown tables */
+.prose .overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted-foreground) transparent;
+}
+
+.prose .overflow-x-auto::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.prose .overflow-x-auto::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.prose .overflow-x-auto::-webkit-scrollbar-thumb {
+  background-color: var(--muted-foreground);
+  border-radius: 10px;
+  border: none;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.prose .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background-color: var(--foreground);
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.prose .overflow-x-auto::-webkit-scrollbar-corner {
+  background: transparent;
+}
+/* End Custom Scrollbar Styles */
+
+/* LLM Provider Logo Dark Mode Styles */
+.dark [src*='ollama.svg'] {
+  filter: brightness(0) saturate(100%) invert(97%) sepia(3%) saturate(394%) hue-rotate(353deg)
+    brightness(106%) contrast(103%);
+}
+
+.dark [src*='openai.svg'] {
+  filter: brightness(0) saturate(100%) invert(97%) sepia(3%) saturate(394%) hue-rotate(353deg)
+    brightness(106%) contrast(103%);
+}
+
+/* Model Card Ollama Icon Background in Dark Mode */
+.dark .bg-gray-100:has([src*='ollama.svg']) {
+  background-color: var(--muted) !important;
+}
+
+/* Streaming indicator - shown at bottom of message while generating */
+.streaming-indicator {
+  margin-top: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--muted-foreground);
+  display: inline-flex;
+}
+
+.streaming-indicator .dot {
+  animation: streaming-dot 1.4s infinite;
+}
+
+.streaming-indicator .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.streaming-indicator .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes streaming-dot {
+  0%, 20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60%, 100% {
+    opacity: 0;
+  }
+}
